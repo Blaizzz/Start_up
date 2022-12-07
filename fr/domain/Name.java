@@ -1,6 +1,8 @@
 package efrei.fr.domain;
 
-public class Name {
+import java.io.Serializable;
+
+public class Name implements Serializable {
     private String firstName;
     private String middleName;
     private String lastName;
@@ -41,12 +43,12 @@ public class Name {
 
     @Override
     public String toString() {
-        return "Name= " +
+        return "Name{" +
                 "firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'';
+                ", lastName='" + lastName + '\'' +
+                '}' + "\n";
     }
-
 
 
     public static class  Builder {

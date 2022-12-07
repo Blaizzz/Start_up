@@ -1,6 +1,8 @@
 package efrei.fr.domain;
 
-public class Race
+import java.io.Serializable;
+
+public class Race implements Serializable
 {
     private String id;
     private String description;
@@ -11,6 +13,8 @@ public class Race
 
     private Race(Builder builder)
     {
+        this.id = builder.id;
+        this.description = builder.description;
     }
 
 
@@ -29,7 +33,7 @@ public class Race
         return "Race{" +
                 "id='" + id + '\'' +
                 ", description='" + description + '\'' +
-                '}';
+                '}' + "\n";
     }
 
     public static class Builder

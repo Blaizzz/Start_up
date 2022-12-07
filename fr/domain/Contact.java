@@ -1,6 +1,9 @@
 package efrei.fr.domain;
 
-public class Contact {
+
+import java.io.Serializable;
+
+public class Contact implements Serializable {
     private String contactCellPhoneNumber;
     private String contactEmail;
     private String contactHomeNumber;
@@ -41,10 +44,11 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Contact= " +
+        return "Contact{" +
                 "contactCellPhoneNumber='" + contactCellPhoneNumber + '\'' +
                 ", contactEmail='" + contactEmail + '\'' +
-                ", contactHomeNumber='" + contactHomeNumber + '\'';
+                ", contactHomeNumber='" + contactHomeNumber + '\'' +
+                '}' +"\n";
     }
 
 

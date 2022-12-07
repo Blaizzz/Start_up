@@ -1,6 +1,8 @@
 package efrei.fr.domain;
 
-public class Address {
+
+import java.io.Serializable;
+public class Address implements Serializable {
 
     private String addressStreet;
     private String addressPostal;
@@ -25,10 +27,12 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address= " +
+        return "Address{" +
                 "addressStreet='" + addressStreet + '\'' +
-                ", addressPostal='" + addressPostal + '\'';
+                ", addressPostal='" + addressPostal + '\'' +
+                '}' + "\n";
     }
+
 
     public static class Builder{
         private String addressStreet;

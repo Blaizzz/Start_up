@@ -1,6 +1,8 @@
 package efrei.fr.domain;
 
-public class Identities {
+import java.io.Serializable;
+
+public class Identities implements Serializable {
 
     private String identitiesType;
     private String identitiesValue;
@@ -29,7 +31,7 @@ public class Identities {
         return "Identities{" +
                 "identitiesType='" + identitiesType + '\'' +
                 ", identitiesValue='" + identitiesValue + '\'' +
-                '}';
+                '}' + "\n";
     }
 
     public static class Builder{

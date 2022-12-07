@@ -1,7 +1,8 @@
 package efrei.fr.domain;
 
+import java.io.Serializable;
 
-public class Gender
+public class Gender implements Serializable
 {
     private String id;
     private String description;
@@ -12,6 +13,8 @@ public class Gender
 
     private Gender(Builder builder)
     {
+        this.id = builder.id;
+        this.description = builder.description;
     }
 
 
@@ -30,7 +33,7 @@ public class Gender
         return "Gender{" +
                 "id='" + id + '\'' +
                 ", description='" + description + '\'' +
-                '}';
+                '}' + "\n";
     }
 
     public static class Builder
