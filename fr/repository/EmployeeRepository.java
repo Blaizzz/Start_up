@@ -1,10 +1,13 @@
 package efrei.fr.repository;
 
 import efrei.fr.domain.Employee;
+import efrei.fr.domain.EmployeeInfo;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeRepository implements IEmployeeRepository
+public class EmployeeRepository implements IEmployeeRepository, Serializable
 {
     private static EmployeeRepository repository = null;
 
@@ -47,7 +50,7 @@ public class EmployeeRepository implements IEmployeeRepository
     {
         for (Employee r: employeeDB)
         {
-            if (r.getEmployeeID().equals(s))
+            if (r.getID().equals(s))
             {
                 return r ;
             }
@@ -58,7 +61,7 @@ public class EmployeeRepository implements IEmployeeRepository
     @Override
     public Employee update(Employee employee)
     {
-        Employee oldEmployee = read(employee.getEmployeeID());
+        Employee oldEmployee = read(employee.getID());
         if (employee!=null)
         {
             employeeDB.remove(oldEmployee);
@@ -84,6 +87,10 @@ public class EmployeeRepository implements IEmployeeRepository
     public List<Employee> getAll()
     {
         return employeeDB;
+    }
+
+    public Employee find(int i){
+        return employeeDB.get(i);
     }
 }
 
