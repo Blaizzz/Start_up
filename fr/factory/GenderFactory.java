@@ -6,7 +6,7 @@ import efrei.fr.domain.Gender;
 
 public class GenderFactory
 {
-    public static Gender createRace(String description)
+    public static Gender createGender(String description)
     {
         String id = Helper.generateId();
 
