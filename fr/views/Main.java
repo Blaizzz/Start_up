@@ -1,5 +1,4 @@
 package efrei.fr.views;
-
 import efrei.fr.domain.Address;
 import efrei.fr.domain.Name;
 import efrei.fr.domain.Race;
