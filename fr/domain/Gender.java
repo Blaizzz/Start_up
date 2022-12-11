@@ -1,5 +1,6 @@
 package efrei.fr.domain;
 
+
 import java.io.Serializable;
 
 public class Gender implements Serializable
@@ -31,8 +32,7 @@ public class Gender implements Serializable
     @Override
     public String toString() {
         return "Gender{" +
-                "id='" + id + '\'' +
-                ", description='" + description + '\'' +
+                "description='" + description + '\'' +
                 '}' + "\n";
     }
 

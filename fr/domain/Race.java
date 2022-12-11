@@ -31,8 +31,7 @@ public class Race implements Serializable
     @Override
     public String toString() {
         return "Race{" +
-                "id='" + id + '\'' +
-                ", description='" + description + '\'' +
+                "description='" + description + '\'' +
                 '}' + "\n";
     }
 
