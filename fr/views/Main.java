@@ -48,7 +48,7 @@ public class Main {
                     "4. Update an Employee \n" +
                     "5. Delete an Employee \n" +
                     "6. Exit the menu \n ");
-
+            System.out.println("Select your action : ");
             int choice = scan.nextInt();
             //----------------------------------------------------Read_File------------------------------------------------------
             if (choice == 1){
