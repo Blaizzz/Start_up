@@ -47,7 +47,7 @@ public class Main {
                     "4. Update an Employee \n" +
                     "5. Delete an Employee \n" +
                     "6. Exit the menu \n ");
-            System.out.println("Select your action : ");
+
             int choice = scan.nextInt();
             //----------------------------------------------------Read_File------------------------------------------------------
             if (choice == 1){
@@ -154,11 +154,14 @@ public class Main {
                 Identities identities = null;
                 Boolean Verif4 = true;
                 while (Verif4 == true) {
-                    System.out.println("What is his identity document information (Identity Type/Identity Value) : ");
+                    System.out.println("What is his identity document information (Identity Type/Identity Value), if he doesn't have an identity document put null : ");
                     Verif4 = false;
                     String Identityinfo = scan.next();
                     StringTokenizer strtok4 = new StringTokenizer(Identityinfo, "/");
-                    if ((strtok4.countTokens()>1) && (strtok4.countTokens()<3) ) {
+                    if ((strtok4.countTokens()>0) && (strtok4.countTokens()<3) ) {
+                        if ((strtok4.countTokens() == 1) && (strtok4.nextToken() == "null") ){
+                            identities= IdentitiesFactory.createIdentities(null, null);
+                        }
                         if (strtok4.countTokens() == 2) {
                             String identityType = strtok4.nextToken();
                             String identityValue = strtok4.nextToken();
@@ -170,9 +173,11 @@ public class Main {
                         Verif4 = true;
                     }
                 }
-                System.out.println("What is his Position description : ");
+                System.out.println("What is his Position description :");
+                Position position = null;
                 String Positioninfo = scan.next();
-                Position position = PositionFactory.createPosition(Positioninfo);
+                position = PositionFactory.createPosition(Positioninfo);
+
 
                 Employee employee = EmployeeFactory.createEmployee(address,contact,employeeinfo,gender,identities,name,position,race);
                 System.out.println(employee);
@@ -283,11 +288,14 @@ public class Main {
                 Boolean Verif4 = true;
                 while (Verif4 == true) {
                     System.out.println("Identities information of the employee :" + employeeold.getEmpIdentities());
-                    System.out.println("What is his identity document information (Identity Type/Identity Value) : ");
+                    System.out.println("What is his identity document information (Identity Type/Identity Value), if he doesn't have one identity document put null : ");
                     Verif4 = false;
                     String Identityinfo = scan.next();
                     StringTokenizer strtok4 = new StringTokenizer(Identityinfo, "/");
-                    if ((strtok4.countTokens()>1) && (strtok4.countTokens()<3) ) {
+                    if ((strtok4.countTokens()>0) && (strtok4.countTokens()<3)) {
+                        if ((strtok4.countTokens() == 1) && (strtok4.nextToken() == "null") ){
+                            identities= IdentitiesFactory.createIdentities(null, null);
+                        }
                         if (strtok4.countTokens() == 2) {
                             String identityType = strtok4.nextToken();
                             String identityValue = strtok4.nextToken();
@@ -301,8 +309,9 @@ public class Main {
                 }
                 System.out.println("Contact information of the employee :" + employeeold.getEmpPosition());
                 System.out.println("What is his Position description : ");
+                Position position = null;
                 String Positioninfo = scan.next();
-                Position position = PositionFactory.createPosition(Positioninfo);
+                position = PositionFactory.createPosition(Positioninfo);
 
                 Employee employeenew = EmployeeFactory.createEmployee(ID,address,contact,employeeinfo,gender,identities,name,position,race);
                 repositoryempupdate.update(employeenew);
@@ -329,4 +338,3 @@ public class Main {
         }
     }
 }
-
