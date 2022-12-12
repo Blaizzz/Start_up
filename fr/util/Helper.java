@@ -1,5 +1,6 @@
 package efrei.fr.util;
 
+import efrei.fr.domain.EmployeeInfo;
 import efrei.fr.repository.EmployeeRepository;
 
 import java.io.*;
@@ -20,6 +21,12 @@ public class Helper {
         } else {
             return false;
         }
+    }
+    public static String generateEmpId(EmployeeInfo employeeInfo){
+        int number = employeeInfo.getEmployeeNumber();
+        int result = 20230000 + number;
+        String id = String.valueOf(result);
+        return id;
     }
 
     public static String generateId() {

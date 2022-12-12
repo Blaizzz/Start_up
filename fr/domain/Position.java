@@ -37,7 +37,7 @@ public class Position implements Serializable
     @Override
     public String toString() {
         return "Position{" +
-                ", positionStatus='" + positionStatus + '\'' +
+                "positionStatus='" + positionStatus + '\'' +
                 ", description='" + description + '\'' +
                 '}' + "\n";
     }
